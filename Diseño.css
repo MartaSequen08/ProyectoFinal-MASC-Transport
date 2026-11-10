@@ -354,3 +354,222 @@ footer {
     margin-right: 8px;
     vertical-align: middle;
 }
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   DISEÑO RESPONSIVE - MASC TRANSPORT
+========================================= */
+
+/* TABLETAS */
+@media screen and (max-width: 768px) {
+
+    /* Encabezado */
+    .encabezado {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Bienvenida */
+    .bienvenida {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .contenido {
+        max-width: 100%;
+    }
+
+    .contenido h2 {
+        font-size: 32px;
+    }
+
+    .contenido p {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+    /* Servicios */
+    .servicios {
+        padding: 40px 15px;
+    }
+
+    .contenedores {
+        gap: 15px;
+    }
+
+    .servicio {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* Información */
+    .informacion {
+        padding: 40px 20px;
+    }
+
+    /* Paneles */
+    .panel-acceso {
+        width: 92%;
+        margin: 25px auto;
+        padding: 25px 20px;
+    }
+
+    /* Tarjeta digital */
+    .tarjeta-digital {
+        width: 100%;
+        max-width: 430px;
+    }
+
+    /* Rutas */
+    .tarjeta-ruta {
+        padding: 18px;
+    }
+
+    /* Mapa */
+    .mapa {
+        padding: 35px 15px;
+    }
+
+    .mapa iframe {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+/* CELULARES */
+@media screen and (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    /* Encabezado */
+    .logo h1 {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    /* Bienvenida */
+    .bienvenida {
+        padding: 35px 15px;
+    }
+
+    .contenido h2 {
+        font-size: 27px;
+    }
+
+    .contenido p {
+        font-size: 15px;
+    }
+
+    .hero-image img {
+        max-width: 280px;
+    }
+
+    /* Botones */
+    button {
+        max-width: 100%;
+        padding: 12px 16px;
+    }
+
+    .btn-secundario {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    /* Servicios */
+    .servicios h2,
+    .informacion h2 {
+        font-size: 23px;
+    }
+
+    .servicio {
+        padding: 22px;
+    }
+
+    /* Paneles */
+    .panel-acceso {
+        width: 94%;
+        padding: 22px 16px;
+    }
+
+    .panel-acceso input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Tarjeta digital */
+    .tarjeta-digital {
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .encabezado-tarjeta h2 {
+        font-size: 19px;
+    }
+
+    .encabezado-tarjeta span {
+        font-size: 28px;
+    }
+
+    .saldo-tarjeta h2 {
+        font-size: 23px;
+    }
+
+    /* Rutas */
+    .tarjeta-ruta {
+        padding: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Mapa */
+    .mapa iframe {
+        height: 280px;
+    }
+
+    .mapa a {
+        max-width: 100%;
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 18px 12px;
+    }
+}
