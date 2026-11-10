@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASC TRANSPORT</title>
+
+    <link rel="stylesheet" href="Diseño.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <div class="logo">
+            <h1>MASC TRANSPORT</h1>
+            <span>Transporte urbano</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#informacion">Nosotros</a>
+            <a href="#mapa">Google Maps</a>
+        </nav>
+
+        <button class="btn-ingresar" onclick="mostrarLogin()">
+            Ingresar
+        </button>
+    </header>
+
+    <!-- PRESENTACION -->
+    <main>
+
+        <section class="bienvenida">
+            <div class="contenido">
+                <h2>Tu ciudad, tu transporte</h2>
+
+                <p>
+                    Viaja de manera segura, rápida y accesible
+                    con nuestro servicio de transporte urbano.
+                </p>
+
+                <button onclick="mostrarLogin()">
+                    Iniciar sesión
+                </button>
+
+                <button class="btn-secundario"
+                        onclick="comprarTarjeta()">
+                    Comprar tarjeta
+                </button>
+            </div>
+
+            <div class="hero-image">
+            <img src="imagenes/LogoMASC.png" alt="Logo MASC TRANSPORT">
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="servicios">
+            <h2>Nuestros servicios</h2>
+
+            <div class="contenedores">
+
+                <article class="servicio">
+                    <h3>💳 Tarjeta de transporte</h3>
+                    <p>Compra y administra tu tarjeta.</p>
+                </article>
+
+                <article class="servicio">
+                    <h3>💰 Recargas</h3>
+                    <p>Agrega saldo para tus viajes.</p>
+                </article>
+
+                <article class="servicio">
+                    <h3>🗺️ Rutas</h3>
+                    <p>Consulta nuestros recorridos.</p>
+                </article>
+               
+
+            </div>
+        </section>
+
+        <!-- INFORMACION -->
+        <section id="informacion" class="informacion">
+            <h2>Sobre MASC TRANSPORT</h2>
+
+            <p>
+                Somos una empresa dedicada al transporte urbano,
+                comprometida con ofrecer un servicio eficiente,
+                seguro y accesible para nuestros usuarios.
+            </p>
+        </section>
+
+        
+    <!-- INICIO DE SESION -->
+    <section id="login" class="panel-acceso" hidden>
+        <h2>Iniciar sesión</h2>
+
+        <form id="formLogin">
+            <label>Usuario:</label>
+            <input type="text" id="usuarioLogin" required>
+
+            <label>Contraseña:</label>
+            <input type="password" id="passwordLogin" required>
+
+            <button type="submit">Ingresar</button>
+            <button type="button" class="btn-secundario"
+                    onclick="cerrarPaneles()">Cancelar</button>
+        </form>
+
+        <p id="mensajeLogin"></p>
+    </section>
+
+    <!-- REGISTRO DE USUARIOS -->
+    <section id="registro" class="panel-acceso" hidden>
+        <h2>Registro de usuario</h2>
+
+        <form id="formRegistro">
+            <label>Nombre completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label>Correo electrónico:</label>
+            <input type="email" id="correo" required>
+
+            <label>Teléfono:</label>
+            <input type="tel" id="telefono" required>
+
+            <button type="submit">Registrarme</button>
+            <button type="button" class="btn-secundario"
+                    onclick="cerrarPaneles()">Cancelar</button>
+        </form>
+
+        <p id="mensajeRegistro"></p>
+    </section>
+
+    <!--ADMINISTRADOR -->
+    <section id="panelAdmin" class="panel-acceso" hidden>
+        <h2>Panel de administrador</h2>
+        <p>Bienvenido al sistema MASC TRANSPORT.</p>
+
+        <button onclick="mostrarUsuarios()">Consultar usuarios</button>
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+
+        <div id="listaUsuarios"></div>
+        <button onclick="mostrarHistorialAdmin()">
+        Consultar historial de viajes
+        </button>
+
+        <div id="historialAdmin"></div>
+    </section>
+
+    <!-- USUARIO -->
+    <section id="panelUsuario" class="panel-acceso" hidden>
+    <h2>Mi tarjeta MASC TRANSPORT</h2>
+
+    <div id="tarjetaDigital"></div>
+
+    <h3>Recargar saldo</h3>
+
+    <input
+        type="number"
+        id="montoRecarga"
+        placeholder="Ingrese el monto en quetzales"
+        min="1"
+    >
+
+    <button onclick="recargarSaldo()">
+        Recargar tarjeta
+    </button>
+
+    <h3>Abordar bus</h3>
+
+    <p>Tarifa por viaje: Q5.00</p>
+    <h3>Selecciona tu ruta</h3>
+
+    <select id="rutaSeleccionada" onchange="consultarRuta()">
+    <option value="">Selecciona una ruta</option>
+    </select>
+    <div id="informacionRuta"></div>
+    
+    
+
+    <h3>Abordar bus</h3>
+
+    <p>Tarifa por viaje: Q5.00</p>
+
+    <button onclick="abordarBus()">
+        Registrar abordaje
+    </button>
+
+    <p id="mensajeTarjeta"></p>
+    <h3>Mi historial de viajes</h3>
+
+    <div id="listaHistorial">
+        <p>Aún no tienes viajes registrados.</p>
+    </div>
+
+    <button onclick="cerrarSesion()">
+        Cerrar sesión
+    </button>
+</section>
+    
+    <section id="seccionRutas" class="panel-acceso">
+    <h2>Rutas y paradas</h2>
+
+    <p>Consulta las rutas disponibles de MASC TRANSPORT.</p>
+
+    <div id="listaRutas"></div>
+    </section>
+    <section id="mapa" class="mapa">
+    <h2>Ubicación de nuestras rutas</h2>
+    <p>Consulta nuestras rutas de transporte urbano.</p>
+    
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1QPRWt6ztg6gtiCW2ODSeRAdMWBqS5D4&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+
+  
+
+    <a id="enlaceGoogleMaps"
+       href="https://www.google.com/maps"
+       target="_blank">
+       Ver en Google Maps
+    </a>
+</section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 MASC TRANSPORT | Servicio de transporte urbano</p>
+    </footer>
+
+    <script src="Bus.js"></script>
+    <script src="rutas.js"></script>
+
+</body>
+</html>
+
